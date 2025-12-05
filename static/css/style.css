@@ -1,13 +1,71 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f8; color: #222; background-image: url(https://img.freepik.com/vector-gratis/campo-futbol-verde_225004-1137.jpg?semt=ais_hybrid&w=740&q=80);}
-.site-header { background: #0b5; padding: 12px 20px; color: white; }
-.site-header h1 { margin: 0; display: inline-block; }
-.site-header nav { display: inline-block; margin-left: 20px; }
-.site-header a { color: white; text-decoration: none; margin-right: 10px; }
-.container { padding: 20px; max-width: 1000px; margin: 0 auto; background: white; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
-.tabla { width: 100%; border-collapse: collapse; margin-top: 12px; }
-.tabla th, .tabla td { border: 1px solid #eee; padding: 8px; text-align: left; }
-.btn { background: #0b5; color: #fff; padding: 8px 10px;background-color: rgba(255, 255, 255, 0.8); border-radius: 6px; text-decoration: none; border: none; cursor: pointer; }
-.form { display: grid; gap: 10px; max-width: 500px; margin-top: 10px; }
-.form-inline { display:flex; gap:8px; align-items:center; margin-top: 10px; flex-wrap:wrap; }      
-h1, h2 {text-align: center;color: red;text-shadow: 2px 2px 4px #000000;}
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; padding: 0; 
+    background: #f4f6f8; 
+    color: #222; 
+    background-image: url(https://img.freepik.com/vector-gratis/campo-futbol-verde_225004-1137.jpg?semt=ais_hybrid&w=740&q=80);
+}
+.site-header { 
+    background: #0b5; 
+    padding: 12px 20px; 
+    color: white; 
+}
+.site-header h1 { 
+    margin: 0; 
+    display: inline-block; 
+}
+.site-header nav { 
+    display: inline-block; 
+    margin-left: 20px;
+ }
+.site-header a { 
+    color: white;
+     text-decoration: none; 
+     margin-right: 10px; 
+}
+.container { 
+    padding: 20px;
+     max-width: 1000px; 
+     margin: 0 auto; 
+     background: white; 
+     margin-top: 20px; 
+     border-radius: 8px; 
+     box-shadow: 0 2px 6px rgba(0,0,0,.08); 
+}
+.tabla { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+.tabla th, .tabla td { 
+    border: 1px solid #eee; 
+    padding: 8px; 
+}
+.btn { 
+    background: #0b5; 
+    color: #fff; 
+    padding: 8px 10px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 6px; 
+    text-decoration: none; 
+    border: none; 
+    cursor: pointer; 
+}
+.form { 
+    display: grid; 
+    gap: 10px; 
+    max-width: 500px; 
+    margin-top: 10px; 
+}
+.form-inline { 
+    display:flex; 
+    gap:8px; 
+    align-items:center; 
+    margin-top: 10px; 
+    flex-wrap:wrap;
+ }      
+h1, h2 {
+    text-align: center;
+    color: red;
+    text-shadow: 2px 2px 4px #000000;
+}
         
