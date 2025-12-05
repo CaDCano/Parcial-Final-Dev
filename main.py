@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="sigmotoa FC")
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(title="Sigmotoa FC")
 
 
 @app.get("/")
