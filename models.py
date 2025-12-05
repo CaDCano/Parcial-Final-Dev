@@ -1,7 +1,10 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime, Boolean
+import datetime
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum as SAEnum
 from sqlalchemy.orm import relationship
-from sqlalchemy.sql import func
 from database import Base
+from utils.positions import Position
+from utils.states import States
+from utils.pie import PieDominante
 
 class Jugador():
     __tablename__ = "jugadores"
@@ -12,17 +15,35 @@ class Jugador():
     estado = Column(SAEnum(States), nullable=False, default=States.ACTIVO)
     dorsal = Column(Integer, nullable=True)
     nacionalidad = Column(String, nullable=True)
+    altura = Column(Float, nullable=True)
+    peso = Column(Integer,nullable=True)
+    pie_Dominante = Column(SAEnum(PieDominante),nullable=False)
+    anio_Nacimiento = Column(Integer, nullable=True)
 
     estadisticas = relationship("Estadistica", back_populates="jugador")
 
-    pass
-
 
 class Estadistica():
+    __tablename__ = "estadisticas"
+    id = Column(Integer, primary_key=True, index=True)
+    jugador_id = Column(Integer, ForeignKey("jugadores.id"))
+    partido_id = Column(Integer, ForeignKey("partidos.id"), nullable=True)
+    goles = Column(Integer, default=0)
+    asistencias = Column(Integer, default=0)
+    sanciones = Column(Integer, default=0)
+
+    jugador = relationship("Jugador", back_populates="estadisticas")
+class Club():
     pass
 
 
 class Partido():
-    pass
+    __tablename__ = "partidos"
+    id = Column(Integer, primary_key=True, index=True)
+    rival = Column(String, nullable=False)
+    fecha = Column(DateTime, default=datetime.datetime.utcnow)
+    local = Column(String, nullable=True)
+    resultado = Column(String, nullable=True)
+
 
 
