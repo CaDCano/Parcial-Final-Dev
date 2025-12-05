@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ accion }} Jugador{% endblock %}
+{% block content %}
+<h2>{{ accion }} Jugador</h2>
+<form action="/jugadores/nuevo" method="post" class="form">
+  <label>Nombre:<input type="text" name="nombre" required></label>
+
+  <label>Posición:
+    <select name="posicion" required>
+      {% for p in posiciones %}
+        <option value="{{ p }}">{{ p }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label>Estado:
+    <select name="estado">
+      {% for s in estados %}
+        <option value="{{ s }}">{{ s }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label>Dorsal:<input type="number" name="dorsal"></label>
+  <label>Nacionalidad:<input type="text" name="nacionalidad"></label>
+  <button type="submit" class="btn">Guardar</button>
+</form>
+{% endblock %}

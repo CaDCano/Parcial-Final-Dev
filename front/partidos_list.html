@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Partidos{% endblock %}
+{% block content %}
+<h2>Partidos</h2>
+<form action="/partidos/nuevo" method="post" class="form-inline">
+  <input name="rival" placeholder="Rival" required>
+  <input name="fecha" placeholder="YYYY-MM-DD HH:MM" >
+  <input name="local" placeholder="Local/Visitante">
+  <input name="resultado" placeholder="Resultado">
+  <button class="btn" type="submit">Agregar partido</button>
+</form>
+
+<table class="tabla">
+<thead><tr><th>ID</th><th>Rival</th><th>Fecha</th><th>Local</th><th>Resultado</th></tr></thead>
+<tbody>
+  {% for p in partidos %}
+  <tr>
+    <td>{{ p.id }}</td>
+    <td>{{ p.rival }}</td>
+    <td>{{ p.fecha }}</td>
+    <td>{{ p.local or '-' }}</td>
+    <td>{{ p.resultado or '-' }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="5">No hay partidos</td></tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endblock %}

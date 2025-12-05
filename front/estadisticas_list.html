@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Estadísticas{% endblock %}
+{% block content %}
+<h2>Estadísticas</h2>
+<form action="/estadisticas/nuevo" method="post" class="form-inline">
+  <input name="jugador_id" type="number" placeholder="ID Jugador" required>
+  <input name="partido_id" type="number" placeholder="ID Partido">
+  <input name="goles" type="number" placeholder="Goles" value="0">
+  <input name="asistencias" type="number" placeholder="Asistencias" value="0">
+  <input name="sanciones" type="number" placeholder="Sanciones" value="0">
+  <button class="btn" type="submit">Agregar estadística</button>
+</form>
+
+<table class="tabla">
+<thead><tr><th>ID</th><th>Jugador ID</th><th>Partido ID</th><th>Goles</th><th>Asist.</th><th>Sanciones</th></tr></thead>
+<tbody>
+  {% for e in estadisticas %}
+  <tr>
+    <td>{{ e.id }}</td>
+    <td>{{ e.jugador_id }}</td>
+    <td>{{ e.partido_id or '-' }}</td>
+    <td>{{ e.goles }}</td>
+    <td>{{ e.asistencias }}</td>
+    <td>{{ e.sanciones }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="6">No hay estadísticas</td></tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endblock %}

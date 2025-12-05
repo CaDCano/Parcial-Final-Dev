@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Jugadores{% endblock %}
+{% block content %}
+<h2>Jugadores</h2>
+<a class="btn" href="/jugadores/nuevo">Agregar Jugador</a>
+<table class="tabla">
+  <thead><tr><th>ID</th><th>Nombre</th><th>Posición</th><th>Estado</th><th>Dorsal</th><th>Nacionalidad</th></tr></thead>
+  <tbody>
+    {% for j in jugadores %}
+    <tr>
+      <td>{{ j.id }}</td>
+      <td>{{ j.nombre }}</td>
+      <td>{{ j.posicion.value if j.posicion else '-' }}</td>
+      <td>{{ j.estado.value if j.estado else '-' }}</td>
+      <td>{{ j.dorsal or '-' }}</td>
+      <td>{{ j.nacionalidad or '-' }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="6">No hay jugadores</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
