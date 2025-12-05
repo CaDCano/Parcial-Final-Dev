@@ -6,7 +6,7 @@ from utils.positions import Position
 from utils.states import States
 from utils.pie import PieDominante
 
-class Jugador():
+class Jugador(Base):
     __tablename__ = "jugadores"
     
     id = Column(Integer, primary_key=True, index=True)
@@ -23,7 +23,7 @@ class Jugador():
     estadisticas = relationship("Estadistica", back_populates="jugador")
 
 
-class Estadistica():
+class Estadistica(Base):
     __tablename__ = "estadisticas"
     id = Column(Integer, primary_key=True, index=True)
     jugador_id = Column(Integer, ForeignKey("jugadores.id"))
@@ -33,11 +33,11 @@ class Estadistica():
     sanciones = Column(Integer, default=0)
 
     jugador = relationship("Jugador", back_populates="estadisticas")
-class Club():
+class Club(Base):
     pass
 
 
-class Partido():
+class Partido(Base):
     __tablename__ = "partidos"
     id = Column(Integer, primary_key=True, index=True)
     rival = Column(String, nullable=False)
