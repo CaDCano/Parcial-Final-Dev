@@ -1,7 +1,15 @@
-{% extends "base.html" %}
-{% block title %}{{ accion }} Jugador{% endblock %}
-{% block content %}
-<h2>{{ accion }} Jugador</h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="container"></div>
+  <link rel="icon" type="image/png" href="https://images.vexels.com/media/users/3/230494/isolated/preview/e52c80aa065e32f3b03c5196db717691-balon-de-futbol-grande-plano.png">
+  <title>Sigmotoa FC</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h2>{{ accion }} Jugador</h2>
 <form action="/jugadores/nuevo" method="post" class="form">
   <label>Nombre:<input type="text" name="nombre" required></label>
 
@@ -25,4 +33,8 @@
   <label>Nacionalidad:<input type="text" name="nacionalidad"></label>
   <button type="submit" class="btn">Guardar</button>
 </form>
-{% endblock %}
+  <footer class="site-footer">
+    <small>Proyecto Final - Sigmotoa FC</small>
+  </footer>
+</body>
+</html>

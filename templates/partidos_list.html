@@ -1,6 +1,14 @@
-{% extends "base.html" %}
-{% block title %}Partidos{% endblock %}
-{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="container"></div>
+  <link rel="icon" type="image/png" href="https://images.vexels.com/media/users/3/230494/isolated/preview/e52c80aa065e32f3b03c5196db717691-balon-de-futbol-grande-plano.png">
+  <title>Sigmotoa FC </title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
 <h2>Partidos</h2>
 <form action="/partidos/nuevo" method="post" class="form-inline">
   <input name="rival" placeholder="Rival" required>
@@ -26,4 +34,8 @@
   {% endfor %}
 </tbody>
 </table>
-{% endblock %}
+  <footer class="site-footer">
+    <small>Proyecto Final - Sigmotoa FC</small>
+  </footer>
+</body>
+</html>
