@@ -5,7 +5,7 @@ from database import Base
 from utils.positions import Position
 from utils.states import States
 from utils.pie import PieDominante
-
+from utils.resultado import Resultado
 class Jugador(Base):
     __tablename__ = "jugadores"
     
@@ -15,7 +15,7 @@ class Jugador(Base):
     estado = Column(SAEnum(States), nullable=False, default=States.ACTIVO)
     dorsal = Column(Integer, nullable=True)
     nacionalidad = Column(String, nullable=True)
-    altura = Column(Float, nullable=True)
+    altura = Column(float, nullable=True)
     peso = Column(Integer,nullable=True)
     pie_Dominante = Column(SAEnum(PieDominante),nullable=False)
     anio_Nacimiento = Column(Integer, nullable=True)
@@ -43,7 +43,7 @@ class Partido(Base):
     rival = Column(String, nullable=False)
     fecha = Column(DateTime, default=datetime.datetime.utcnow)
     local = Column(String, nullable=True)
-    resultado = Column(String, nullable=True)
+    resultado = Column(SAEnum(Resultado), nullable=True)
 
 
 
