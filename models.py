@@ -1,7 +1,6 @@
 import datetime
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime, Boolean
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum as SAEnum
 from sqlalchemy.orm import relationship
-from sqlalchemy.sql import func
 from database import Base
 from utils.positions import Position
 from utils.states import States
@@ -16,7 +15,7 @@ class Jugador():
     estado = Column(SAEnum(States), nullable=False, default=States.ACTIVO)
     dorsal = Column(Integer, nullable=True)
     nacionalidad = Column(String, nullable=True)
-    altura = Column(float, nullable=True)
+    altura = Column(Float, nullable=True)
     peso = Column(Integer,nullable=True)
     pie_Dominante = Column(SAEnum(PieDominante),nullable=False)
     anio_Nacimiento = Column(Integer, nullable=True)
