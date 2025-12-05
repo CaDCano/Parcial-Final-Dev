@@ -33,7 +33,7 @@ class Estadistica(Base):
     sanciones = Column(Integer, default=0)
 
     jugador = relationship("Jugador", back_populates="estadisticas")
-class Club(Base):
+class Club(Base):# AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA <--- FALTA
     pass
 
 
