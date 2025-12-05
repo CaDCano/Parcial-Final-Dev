@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="container"></div>
+  <link rel="icon" type="image/png" href="https://images.vexels.com/media/users/3/230494/isolated/preview/e52c80aa065e32f3b03c5196db717691-balon-de-futbol-grande-plano.png">
+  <title>Sigmotoa FC - {% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Sigmotoa FC</h1>
+    <nav>
+      <a href="/">Inicio</a> |
+      <a href="/jugadores">Jugadores</a> |
+      <a href="/partidos">Partidos</a> |
+      <a href="/estadisticas">Estadísticas</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <small>Proyecto Final - Sigmotoa FC</small>
+  </footer>
+</body>
+</html>
