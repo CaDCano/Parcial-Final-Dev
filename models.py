@@ -5,8 +5,8 @@ from database import Base
 from utils.positions import Position
 from utils.states import States
 from utils.pie import PieDominante
-
-class Jugador():
+from utils.resultado import Resultado
+class Jugador(Base):
     __tablename__ = "jugadores"
     
     id = Column(Integer, primary_key=True, index=True)
@@ -15,7 +15,7 @@ class Jugador():
     estado = Column(SAEnum(States), nullable=False, default=States.ACTIVO)
     dorsal = Column(Integer, nullable=True)
     nacionalidad = Column(String, nullable=True)
-    altura = Column(Float, nullable=True)
+    altura = Column(float, nullable=True)
     peso = Column(Integer,nullable=True)
     pie_Dominante = Column(SAEnum(PieDominante),nullable=False)
     anio_Nacimiento = Column(Integer, nullable=True)
@@ -23,7 +23,7 @@ class Jugador():
     estadisticas = relationship("Estadistica", back_populates="jugador")
 
 
-class Estadistica():
+class Estadistica(Base):
     __tablename__ = "estadisticas"
     id = Column(Integer, primary_key=True, index=True)
     jugador_id = Column(Integer, ForeignKey("jugadores.id"))
@@ -33,17 +33,17 @@ class Estadistica():
     sanciones = Column(Integer, default=0)
 
     jugador = relationship("Jugador", back_populates="estadisticas")
-class Club():
+class Club(Base):# AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA <--- FALTA
     pass
 
 
-class Partido():
+class Partido(Base):
     __tablename__ = "partidos"
     id = Column(Integer, primary_key=True, index=True)
     rival = Column(String, nullable=False)
     fecha = Column(DateTime, default=datetime.datetime.utcnow)
     local = Column(String, nullable=True)
-    resultado = Column(String, nullable=True)
+    resultado = Column(SAEnum(Resultado), nullable=True)
 
 
 
