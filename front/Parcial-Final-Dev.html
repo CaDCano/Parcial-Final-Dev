@@ -34,6 +34,14 @@
     </style>
       <h1>sigmotoa FC</h1>
       <h2>Formulario de Rivales</h2>
+     <form jugadoresForm> 
+        <label for="jugador">estado del jugador:</label>
+        <select id="jugador" name="jugador">
+            <option value="1">forma parte</option>
+            <option value="2">Formo parte</option>
+        </select>
+        <button type="submit">Obtener Jugadores</button>
+     </form>   
     <form id="rivalForm">
         <label for="equipo">Selecciona un equipo:</label>
         <select id="equipo" name="equipo">
@@ -41,5 +49,7 @@
             <option value="2">Equipo 2</option>
         </select>
         <button type="submit">Obtener Rivales</button>
-</body>
+
+    </form>
+    </body>
 </html>
